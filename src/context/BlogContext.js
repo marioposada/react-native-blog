@@ -8,7 +8,10 @@ export const BlogProvider = ({ children }) => {
   const addBlogPost = () => {
     setBlogPosts([
       ...blogPosts,
-      { title: `Blog Post #${blogPosts.length + 1}` },
+      {
+        id: Math.floor(Math.random() * 99999),
+        title: `Blog Post #${blogPosts.length + 1}`,
+      },
     ]);
   };
 
