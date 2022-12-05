@@ -1,16 +1,14 @@
 import React, { useContext } from "react";
 import { StyleSheet, Text, View, FlatList, Button } from "react-native";
 import { FontAwesome } from '@expo/vector-icons';
-
 import BlogContext from "../context/BlogContext";
 
 const IndexScreen = () => {
-  const { data, addBlogPost } = useContext(BlogContext);
-  console.log(data);
+  const {data, addBlogPost } = useContext(BlogContext);
+
 
   return (
     <View>
-      <Text>Index Screen</Text>
       <Button title="Add Post" onPress={() => addBlogPost()} />
       <FlatList
         data={data}
