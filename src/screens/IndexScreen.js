@@ -3,13 +3,13 @@ import { StyleSheet, Text, View, FlatList, Button } from "react-native";
 import { FontAwesome } from '@expo/vector-icons';
 import BlogContext from "../context/BlogContext";
 
-const IndexScreen = () => {
+const IndexScreen = ({navigation}) => {
   const {data, addBlogPost } = useContext(BlogContext);
 
 
   return (
     <View>
-      <Button title="Add Post" onPress={() => addBlogPost()} />
+      <Button title="Add Post" onPress={() => navigation.navigate('Create')} />
       <FlatList
         data={data}
         keyExtractor={(blogPost) => blogPost.title}
